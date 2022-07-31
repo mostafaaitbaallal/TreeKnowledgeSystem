@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,9 +14,9 @@ namespace TreeKnowledgeSystem.Infrastructure.Repositories
     public class TreeStudentRepository : Repository<TreeStudent>, ITreeStudentRepository
     {
         public TreeStudentRepository(TreeKnowledgeSystemContext treeKnowledgeSystemContext) : base(treeKnowledgeSystemContext) { }
-        public async Task<IEnumerable<TreeStudent>> GetEmployeeByLastName(string lastname)
+        public async Task<IEnumerable<TreeStudent>> GetTreeStudentByLastName(string lastname)
         {
-            return await _employeeContext.Employees.Where(m => m.LastName == lastname).ToListAsync();
+            return await _treeKnowledgeSystemContext.TreeStudents.Where(m => m.StudentLastName == lastname).ToListAsync();
         }
     }
 }

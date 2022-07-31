@@ -10,6 +10,6 @@ namespace TreeKnowledgeSystem.Domain.Repositories
     public interface ITreeStudentRepository : IRepository<TreeKnowledgeSystem.Domain.Entities.TreeStudent>
     {
         //custom operations here
-        Task<IEnumerable<TreeKnowledgeSystem.Domain.Entities.TreeStudent>> GetEmployeeByLastName(string lastname);
+        Task<IEnumerable<TreeKnowledgeSystem.Domain.Entities.TreeStudent>> GetTreeStudentByLastName(string lastname);
     }
 }
