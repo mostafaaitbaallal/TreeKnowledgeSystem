@@ -8,7 +8,7 @@ using TreeKnowledgeSystem.Domain.Entities;
 using TreeKnowledgeSystem.Domain.Repositories.Base;
 using TreeKnowledgeSystem.Infrastructure.Data;
 
-namespace TreeKnowledgeSystem.Infrastructure.Base
+namespace TreeKnowledgeSystem.Infrastructure.Repositories.Base
 {
     public class Repository<T> : IRepository<T> where T : class
     {
