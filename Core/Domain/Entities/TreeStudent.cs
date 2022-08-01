@@ -13,12 +13,12 @@ namespace TreeKnowledgeSystem.Domain.Entities
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int StudentID { get; set; }
-        public string StudentFirstName { get; set; }
+        public string? StudentFirstName { get; set; }
 
-        public string StudentLastName { get; set; }
+        public string? StudentLastName { get; set; }
         public DateTime? DateOfBirth { get; set; }
 
-        public int StudentFirstID { get; set; }
+        //public int StudentFirstID { get; set; }
 
         //public virtual TreeStudentAdress TreeStudentAdress { get; set; }
 
