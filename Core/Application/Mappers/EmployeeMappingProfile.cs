@@ -10,9 +10,9 @@ using AutoMapper;
 
 namespace TreeKnowledgeSystem.Application.Mappers
 {
-    public class EmployeeMappingProfile : Profile
+    public class TreeStudentMappingProfile : Profile
     {
-        public EmployeeMappingProfile()
+        public TreeStudentMappingProfile()
         {
             CreateMap<TreeStudent, TreeStudentResponse>().ReverseMap();
             CreateMap<TreeStudent, CreateTreeStudentCommand>().ReverseMap();

@@ -18,5 +18,6 @@ namespace TreeKnowledgeSystem.Infrastructure.Repositories
         {
             return await _treeKnowledgeSystemContext.TreeStudents.Where(m => m.StudentLastName == lastname).ToListAsync();
         }
+
     }
 }

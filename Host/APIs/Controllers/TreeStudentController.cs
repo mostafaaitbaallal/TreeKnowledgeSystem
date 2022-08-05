@@ -2,8 +2,10 @@
 using Microsoft.AspNetCore.Mvc;
 using TreeKnowledgeSystem.Application.Commands;
 using TreeKnowledgeSystem.Application.Responses;
+using TreeKnowledgeSystem.Application.Queries;
 using TreeKnowledgeSystem.Domain.Entities;
-using Cqrs;
+using TreeKnowledgeSystem.Infrastructure.Repositories;
+
 
 namespace APIs.Controllers
 {
@@ -17,12 +19,12 @@ namespace APIs.Controllers
             _mediator = mediator;
         }
 
-        //[HttpGet]
-        //[ProducesResponseType(StatusCodes.Status200OK)]
-        //public async Task<List<TreeStudent>> Get()
-        //{
-        //    return await _mediator.Send(new GetAllTreeStudentQuery());
-        //}
+        [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<List<TreeStudent>> Get()
+        {
+            return (List<TreeStudent>)await _mediator.Send(new GetAllTreeStudentQuery());
+        }
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<ActionResult<TreeStudentResponse>> CreateTreeStudent([FromBody] CreateTreeStudentCommand command)
@@ -30,5 +32,6 @@ namespace APIs.Controllers
             var result = await _mediator.Send(command);
             return Ok(result);
         }
+
     }
 }

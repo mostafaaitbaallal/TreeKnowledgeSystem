@@ -14,7 +14,7 @@ namespace TreeKnowledgeSystem.Application.Mappers
             var config = new MapperConfiguration(cfg =>
             {
                 cfg.ShouldMapProperty = p => p.GetMethod.IsPublic || p.GetMethod.IsAssembly;
-                cfg.AddProfile<EmployeeMappingProfile>();
+                cfg.AddProfile<TreeStudentMappingProfile>();
             });
             var mapper = config.CreateMapper();
             return mapper;
